@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { AUTHORS } from "../StaticValues";
 
 function Footer() {
   return (
-    <p> &copy; 2023 Created By:Aayush</p>
-  )
+    <div className="container text-center user-select-all">
+      <kbd> &copy; Created By {AUTHORS} </kbd>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

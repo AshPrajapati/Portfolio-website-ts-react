@@ -1,42 +1,47 @@
-import React from 'react';
+import React from "react";
+import { INTERESTS, NAME, Skill, SKILLS } from "../StaticValues";
 
 function Home() {
-    return (
-      <div style={{marginTop:"0px"}}>
-        <div style={{backgroundColor:"GrayText"}}> 
-          <h1 style={{height:"450px",padding:"100px",textAlign:"center"}}> Hi, My Name is Aayush</h1>
-          <div>
-            <h1 style={{textAlign:"center",fontFamily:"monospace"}}>A software developer which crafts the software.</h1>
-            {/* <LinkedInIcon />
-            <EmailIcon />
-            <GithubIcon /> */}
-          </div>
-        </div>
-        <div>
-          <h1> Skills</h1>
-          <ol >
-            <li >
-              <h2> Front-End</h2>
-              <span>
-                ReactJS, Redux, HTML, CSS, NPM,
-                BootStrap, MaterialUI, Yarn, TailwindCSS, StyledComponents
-              </span>
-            </li>
-            <li>
-              <h2>Back-End</h2>
-              <span>
-                NodeJS, ExpressJS, GraphQL, ApolloServer,
-                MySQL, MongoDB, DynamoDB, DigitalOcean, AWS S3, MS SQL
-              </span>
-            </li>
-            <li>
-              <h2>Languages</h2>
-              <span>JavaScript, Java, Python, C#, C, C++, TypeScript, Go</span>
-            </li>
-          </ol>
-        </div>
+  return (
+    <div>
+      <div style={{ padding: "1%" }}>
+        <h3>Hello, My Name is {NAME}</h3>
+        {INTERESTS.map((interest: string, index: number) => (
+          <span className="badge bg-dark mx-2" key={index}>
+            {interest}
+          </span>
+        ))}
+        {/* <LinkedInIcon />
+          <EmailIcon />
+          <GithubIcon /> */}
       </div>
-    );
-  }
-  
+      <div className="text-black" style={{ padding: "1%" }}>
+        <h1> Skills </h1>
+        <ul
+          style={{
+            listStyleType: "circle",
+          }}
+        >
+          <h4>
+            {SKILLS.map((skillObj: Skill, index: number) => (
+              <li key={index}>
+                <span style={{ display: "block" }}>{skillObj.skillTitle}</span>
+                {skillObj.skill.map((currentSkill: string, id: number) => (
+                  <span
+                    className="badge bg-white text-black-50 mx-2"
+                    style={{ fontSize: "small" }}
+                    key={id}
+                  >
+                    {currentSkill}
+                  </span>
+                ))}
+              </li>
+            ))}
+          </h4>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 export default Home;
