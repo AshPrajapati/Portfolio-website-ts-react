@@ -11,30 +11,16 @@ function ProjectItem({ project }: ProjectItemProps) {
     navigate("/project/" + project.id);
   };
   return (
-    <div className="col-sm-3 mx-1 my-1">
-      <div
-        className="card"
-        style={{
-          height: "250px",
-        }}
-      >
+    <div className="col ma1">
+      <div className="card">
         <img
-          className="card-img-top"
+          className="card-img-top grow"
           src={project.image}
           alt="Error in Displaying"
           onClick={handleClick}
           role="button"
-          style={{
-            height: "60%",
-            objectFit: "cover",
-          }}
         />
-        <div
-          className="card-body"
-          style={{
-            height: "40%",
-          }}
-        >
+        <div className="card-body">
           <h5 className="card-title">{project.name}</h5>
           <button className="btn btn-primary" onClick={handleClick}>
             Show Details
